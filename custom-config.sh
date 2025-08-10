@@ -8,7 +8,7 @@
 
 echo 'CONFIG_TARGET_mediatek=y' >> $BUILD_ROOT/.config
 echo 'CONFIG_TARGET_mediatek_filogic=y' >> $BUILD_ROOT/.config
-echo 'CONFIG_TARGET_mediatek_filogic_DEVICE_bananapi_bpi-4=y' >> $BUILD_ROOT/.config
+echo 'CONFIG_TARGET_mediatek_filogic_DEVICE_bananapi_bpi-r4=y' >> $BUILD_ROOT/.config
 
 echo 'CONFIG_PACKAGE_procps-ng-watch=y' >> $BUILD_ROOT/.config
 echo 'CONFIG_PACKAGE_tcpdump=y' >> $BUILD_ROOT/.config
@@ -29,3 +29,21 @@ echo 'CONFIG_PACKAGE_luci-ssl=y' >> $BUILD_ROOT/.config
 echo 'CONFIG_PACKAGE_wpad-mbedtls=y' >> $BUILD_ROOT/.config
 echo 'CONFIG_PACKAGE_iper3=y' >> $BUILD_ROOT/.config
 echo 'CONFIG_PACKAGE_htop=y' >> $BUILD_ROOT/.config
+echo "--- a/arch/arm64/boot/dts/mediatek/mt7988a-bananapi-bpi-r4.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt7988a-bananapi-bpi-r4.dtsi
+@@ -559,6 +559,14 @@ &serial0 {
+        status = "okay";
+ };
+
++&serial1 {
++        status = "okay";
++};
++
++&serial2 {
++        status = "okay";
++};
++
+ &spi0 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&spi0_flash_pins>;" > $BUILD_ROOT/target/linux/mediatek/patches-6.12/070-v6.14-arm64-dts-mediatek-mt7988a-bpi-r4-Enable-serial1-2-deb.patch
+
